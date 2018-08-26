@@ -25,8 +25,8 @@ RSpec.describe DoHClient::CLI, :vcr do
     include_context Async::RSpec::Reactor
 
     it "should act as a server" do
-      interface = [[:udp, '127.0.0.1', 5300]]
-      resolver = Async::DNS::Resolver.new(interface)
+      interfaces = [[:udp, "0.0.0.0", 5300], [:tcp, "0.0.0.0", 5300]]
+      resolver = Async::DNS::Resolver.new(interfaces)
       task = DoHClient::CLI.start %w(act_as_server)
 
       %w(example.com github.com google.com).each do |name|
@@ -39,8 +39,8 @@ RSpec.describe DoHClient::CLI, :vcr do
       task.stop
     end
     it "should act as a server on a given port" do
-      interface = [[:udp, '127.0.0.1', 5311]]
-      resolver = Async::DNS::Resolver.new(interface)
+      interfaces = [[:udp, "0.0.0.0", 5311], [:tcp, "0.0.0.0", 5311]]
+      resolver = Async::DNS::Resolver.new(interfaces)
       task = DoHClient::CLI.start %w(act_as_server --port 5311)
 
       %w(example.com github.com google.com).each do |name|
