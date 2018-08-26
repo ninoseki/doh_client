@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 26 Aug 2018 01:00:23 GMT
+      - Sun, 26 Aug 2018 20:21:01 GMT
       Content-Type:
       - application/dns-json
       Content-Length:
@@ -31,17 +31,17 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Cache-Control:
-      - max-age=25
+      - max-age=32
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 45025c771b239427-NRT
+      - 4509009cedbf94f3-NRT
     body:
       encoding: ASCII-8BIT
       string: '{"Status": 0,"TC": false,"RD": true, "RA": true, "AD": false,"CD":
         false,"Question":[{"name": "github.com.", "type": 1}],"Answer":[{"name": "github.com.",
-        "type": 1, "TTL": 25, "data": "192.30.255.112"},{"name": "github.com.", "type":
-        1, "TTL": 25, "data": "192.30.255.113"}]}'
+        "type": 1, "TTL": 32, "data": "192.30.255.112"},{"name": "github.com.", "type":
+        1, "TTL": 32, "data": "192.30.255.113"}]}'
     http_version: 
-  recorded_at: Sun, 26 Aug 2018 01:00:23 GMT
+  recorded_at: Sun, 26 Aug 2018 20:21:01 GMT
 recorded_with: VCR 4.0.0

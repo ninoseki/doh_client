@@ -1,0 +1,157 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://dns.google.com/resolve?name=example.com&type=A
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/dns-json
+      User-Agent:
+      - curl/7.54.0
+      Connection:
+      - close
+      Host:
+      - dns.google.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Date:
+      - Sun, 26 Aug 2018 20:21:01 GMT
+      Expires:
+      - Sun, 26 Aug 2018 20:21:01 GMT
+      Cache-Control:
+      - private, max-age=3018
+      Content-Type:
+      - application/x-javascript; charset=UTF-8
+      Server:
+      - HTTP server (unknown)
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Encoding
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"Status": 0,"TC": false,"RD": true,"RA": true,"AD": true,"CD": false,"Question":[
+        {"name": "example.com.","type": 1}],"Answer":[ {"name": "example.com.","type":
+        1,"TTL": 3018,"data": "93.184.216.34"}]}'
+    http_version: 
+  recorded_at: Sun, 26 Aug 2018 20:21:01 GMT
+- request:
+    method: get
+    uri: https://dns.google.com/resolve?name=github.com&type=A
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/dns-json
+      User-Agent:
+      - curl/7.54.0
+      Connection:
+      - close
+      Host:
+      - dns.google.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Date:
+      - Sun, 26 Aug 2018 20:21:01 GMT
+      Expires:
+      - Sun, 26 Aug 2018 20:21:01 GMT
+      Cache-Control:
+      - private, max-age=59
+      Content-Type:
+      - application/x-javascript; charset=UTF-8
+      Server:
+      - HTTP server (unknown)
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Encoding
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"Status": 0,"TC": false,"RD": true,"RA": true,"AD": false,"CD": false,"Question":[
+        {"name": "github.com.","type": 1}],"Answer":[ {"name": "github.com.","type":
+        1,"TTL": 59,"data": "192.30.255.113"},{"name": "github.com.","type": 1,"TTL":
+        59,"data": "192.30.255.112"}],"Comment": "Response from 208.78.70.16."}'
+    http_version: 
+  recorded_at: Sun, 26 Aug 2018 20:21:02 GMT
+- request:
+    method: get
+    uri: https://dns.google.com/resolve?name=google.com&type=A
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/dns-json
+      User-Agent:
+      - curl/7.54.0
+      Connection:
+      - close
+      Host:
+      - dns.google.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Date:
+      - Sun, 26 Aug 2018 20:21:02 GMT
+      Expires:
+      - Sun, 26 Aug 2018 20:21:02 GMT
+      Cache-Control:
+      - private, max-age=247
+      Content-Type:
+      - application/x-javascript; charset=UTF-8
+      Server:
+      - HTTP server (unknown)
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Encoding
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"Status": 0,"TC": false,"RD": true,"RA": true,"AD": false,"CD": false,"Question":[
+        {"name": "google.com.","type": 1}],"Answer":[ {"name": "google.com.","type":
+        1,"TTL": 247,"data": "216.58.197.238"}]}'
+    http_version: 
+  recorded_at: Sun, 26 Aug 2018 20:21:02 GMT
+recorded_with: VCR 4.0.0

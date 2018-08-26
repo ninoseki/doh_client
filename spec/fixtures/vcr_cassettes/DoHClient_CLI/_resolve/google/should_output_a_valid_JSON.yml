@@ -23,9 +23,9 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Date:
-      - Sun, 26 Aug 2018 00:59:38 GMT
+      - Sun, 26 Aug 2018 20:21:01 GMT
       Expires:
-      - Sun, 26 Aug 2018 00:59:38 GMT
+      - Sun, 26 Aug 2018 20:21:01 GMT
       Cache-Control:
       - private, max-age=59
       Content-Type:
@@ -49,7 +49,7 @@ http_interactions:
       string: '{"Status": 0,"TC": false,"RD": true,"RA": true,"AD": false,"CD": false,"Question":[
         {"name": "github.com.","type": 1}],"Answer":[ {"name": "github.com.","type":
         1,"TTL": 59,"data": "192.30.255.112"},{"name": "github.com.","type": 1,"TTL":
-        59,"data": "192.30.255.113"}],"Comment": "Response from 208.78.71.16."}'
+        59,"data": "192.30.255.113"}],"Comment": "Response from 204.13.250.16."}'
     http_version: 
-  recorded_at: Sun, 26 Aug 2018 00:59:38 GMT
+  recorded_at: Sun, 26 Aug 2018 20:21:01 GMT
 recorded_with: VCR 4.0.0

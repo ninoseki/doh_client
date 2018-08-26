@@ -18,6 +18,15 @@ module DoHClient
       puts hash.to_json
     end
 
+    desc "act_as_server", "act as a server on a given port (default: 5300)"
+    method_option :port, type: :numeric, default: 5300
+    def act_as_server
+      port = options[:port]
+      interfaces = [[:udp, '127.0.0.1', port]]
+      server = DoHClient::Server.new(interfaces)
+      server.run
+    end
+
     no_commands do
       def resolver
         case options[:resolver]
