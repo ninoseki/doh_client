@@ -13,7 +13,12 @@ module DoHClient
     def process(name, resource_class, transaction)
       type = resource_class.to_s.split('::').last
 
-      response = client.resolve(name, type: type)
+      begin
+        response = client.resolve(name, type: type)
+      rescue ResponseError => _
+        return transaction.fail!(:NXDomain) unless answers
+      end
+
       answers = response["Answer"]
       return transaction.fail!(:NXDomain) unless answers
 
