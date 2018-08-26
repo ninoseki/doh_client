@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "doh_client"
+
+DoHClient::CLI.start
