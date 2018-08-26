@@ -18,6 +18,22 @@ module DoHClient
       puts hash.to_json
     end
 
+    desc "act_as_server", "act as a local DNS server on a given port (default: 5300)"
+    method_option :port, type: :numeric, default: 5300
+    def act_as_server
+      port = options[:port]
+      interfaces = [[:udp, "0.0.0.0", port], [:tcp, "0.0.0.0", port]]
+      server = DoHClient::Server.new(interfaces)
+      puts "Starting DNS server 0.0.0.0:#{port} (tcp/udp)"
+      begin
+        server.run
+      rescue Interrupt
+        puts "\nStopping DNS server..."
+      ensure
+        puts "Stopped"
+      end
+    end
+
     no_commands do
       def resolver
         case options[:resolver]

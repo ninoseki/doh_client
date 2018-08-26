@@ -8,6 +8,8 @@ require "doh_client/client/base"
 require "doh_client/client/cloudflare"
 require "doh_client/client/google"
 
+require "doh_client/server"
+
 require "doh_client/cli"
 
 module DoHClient

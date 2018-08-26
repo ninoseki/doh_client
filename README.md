@@ -4,7 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/e9119ee2021f1cfb895d/maintainability)](https://codeclimate.com/github/ninoseki/doh_client/maintainability)
 [![Coverage Status](https://coveralls.io/repos/github/ninoseki/doh_client/badge.svg?branch=master)](https://coveralls.io/github/ninoseki/doh_client?branch=master)
 
-DNS over HTTPS(DoH) client for Ruby
+DNS over HTTPS (DoH) client for Ruby
 
 ## Installation
 
@@ -46,14 +46,18 @@ DoHClient::Cloudflare.resolve("example.com", { type: "A", do: true, cd: false })
 ```bash
 $ doh_client
 Commands:
-  console help [COMMAND]  # Describe available commands or one specific command
-  console resolve [NAME]  # resolve a given name
+  doh_client act_as_server   # act as a local DNS server on a given port (default: 5300)
+  doh_client help [COMMAND]  # Describe available commands or one specific command
+  doh_client resolve [NAME]  # resolve a given name
 
 Options:
   [--resolver=RESOLVER]  # a resolver to use ('google' or 'cloudflare', default: google)
 
 $ doh_client resolve example.com --type A
-# => {"Status":0,"TC":false,"RD":true,"RA":true,"AD":true,"CD":false,"Question":[{"name":"example.com.","type":1}],"Answer":[{"name":"example.com.","type":1,"TTL":5169,"data":"93.184.216.34"}]}
+# => {"Status":0,"TC":false,"RD":true,"RA":true,"AD":true,"CD":false,"Question":[{"name":"example.com.","type":1}],"Answer":[{"name":"example.com.","type":1,"TTL":5169,"data":"93.184.216.34"}]
+
+$ doh_client act_as_server
+# => Starting DNS server 0.0.0.0:5300 (tcp/udp)
 ```
 
 ## License
