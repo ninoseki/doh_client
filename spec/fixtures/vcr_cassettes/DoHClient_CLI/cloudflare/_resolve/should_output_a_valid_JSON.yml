@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloudflare-dns.com/dns-query?name=github.com&type=A
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/dns-json
+      User-Agent:
+      - curl/7.54.0
+      Connection:
+      - close
+      Host:
+      - cloudflare-dns.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 26 Aug 2018 01:00:23 GMT
+      Content-Type:
+      - application/dns-json
+      Content-Length:
+      - '276'
+      Connection:
+      - close
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=25
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 45025c771b239427-NRT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"Status": 0,"TC": false,"RD": true, "RA": true, "AD": false,"CD":
+        false,"Question":[{"name": "github.com.", "type": 1}],"Answer":[{"name": "github.com.",
+        "type": 1, "TTL": 25, "data": "192.30.255.112"},{"name": "github.com.", "type":
+        1, "TTL": 25, "data": "192.30.255.113"}]}'
+    http_version: 
+  recorded_at: Sun, 26 Aug 2018 01:00:23 GMT
+recorded_with: VCR 4.0.0

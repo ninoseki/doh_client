@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloudflare-dns.com/dns-query?name=example.com&type=A
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/dns-json
+      User-Agent:
+      - curl/7.54.0
+      Connection:
+      - close
+      Host:
+      - cloudflare-dns.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 26 Aug 2018 00:59:38 GMT
+      Content-Type:
+      - application/dns-json
+      Content-Length:
+      - '206'
+      Connection:
+      - close
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=3696
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 45025b5be97ea5ba-NRT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"Status": 0,"TC": false,"RD": true, "RA": true, "AD": true,"CD": false,"Question":[{"name":
+        "example.com.", "type": 1}],"Answer":[{"name": "example.com.", "type": 1,
+        "TTL": 3696, "data": "93.184.216.34"}]}'
+    http_version: 
+  recorded_at: Sun, 26 Aug 2018 00:59:38 GMT
+recorded_with: VCR 4.0.0

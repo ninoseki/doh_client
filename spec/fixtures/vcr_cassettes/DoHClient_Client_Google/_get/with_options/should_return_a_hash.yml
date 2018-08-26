@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://dns.google.com/resolve?edns_client_subnet=0.0.0.0/0&name=example.com&random_padding=XmkMw~o_mgP2pf.gpw-Oi5dK&type=A
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/dns-json
+      User-Agent:
+      - curl/7.54.0
+      Connection:
+      - close
+      Host:
+      - dns.google.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Date:
+      - Sun, 26 Aug 2018 00:59:38 GMT
+      Expires:
+      - Sun, 26 Aug 2018 00:59:38 GMT
+      Cache-Control:
+      - private, max-age=6495
+      Content-Type:
+      - application/x-javascript; charset=UTF-8
+      Server:
+      - HTTP server (unknown)
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Encoding
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"Status": 0,"TC": false,"RD": true,"RA": true,"AD": true,"CD": false,"Question":[
+        {"name": "example.com.","type": 1}],"Answer":[ {"name": "example.com.","type":
+        1,"TTL": 6495,"data": "93.184.216.34"}],"Additional":[],"edns_client_subnet":
+        "0.0.0.0/0"}'
+    http_version: 
+  recorded_at: Sun, 26 Aug 2018 00:59:38 GMT
+recorded_with: VCR 4.0.0
