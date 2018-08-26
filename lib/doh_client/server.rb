@@ -5,9 +5,9 @@ require 'async/dns'
 module DoHClient
   class Server < Async::DNS::Server
     attr_reader :client
-    def initialize(resolver)
-      super
-      @client = resolver == "cloudflare" ? DoHClient::Client::Cloudflare : DoHClient::Client::Google
+    def initialize(endpoints, resolver = DoHClient::Client::Google)
+      super(endpoints)
+      @client = resolver
     end
 
     def process(name, resource_class, transaction)
