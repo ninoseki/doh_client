@@ -7,12 +7,12 @@ module DoHClient
         "https://cloudflare-dns.com/dns-query"
       end
 
-      def build_query(params)
+      def build_query(name, options)
         {
-          name: params[:name],
-          type: params[:type],
-          cd: params[:cd],
-          do: params[:do]
+          name: name,
+          type: options[:type],
+          cd: options[:cd],
+          do: options[:do]
         }.compact
       end
 

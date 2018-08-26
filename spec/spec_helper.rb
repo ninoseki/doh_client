@@ -3,6 +3,9 @@
 require "bundler/setup"
 require "doh_client"
 
+require 'coveralls'
+Coveralls.wear!
+
 require "vcr"
 
 RSpec.configure do |config|

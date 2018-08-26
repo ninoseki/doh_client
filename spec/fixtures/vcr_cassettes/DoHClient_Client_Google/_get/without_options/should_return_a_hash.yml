@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://dns.google.com/resolve?name=github.com&type=A
+    uri: https://dns.google.com/resolve?name=example.com&type=A
     body:
       encoding: UTF-8
       string: ''
@@ -23,11 +23,11 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Date:
-      - Fri, 24 Aug 2018 08:46:30 GMT
+      - Sun, 26 Aug 2018 00:59:38 GMT
       Expires:
-      - Fri, 24 Aug 2018 08:46:30 GMT
+      - Sun, 26 Aug 2018 00:59:38 GMT
       Cache-Control:
-      - private, max-age=59
+      - private, max-age=5887
       Content-Type:
       - application/x-javascript; charset=UTF-8
       Server:
@@ -46,10 +46,9 @@ http_interactions:
       - close
     body:
       encoding: UTF-8
-      string: '{"Status": 0,"TC": false,"RD": true,"RA": true,"AD": false,"CD": false,"Question":[
-        {"name": "github.com.","type": 1}],"Answer":[ {"name": "github.com.","type":
-        1,"TTL": 59,"data": "192.30.255.113"},{"name": "github.com.","type": 1,"TTL":
-        59,"data": "192.30.255.112"}],"Comment": "Response from ns-1283.awsdns-32.org.(208.78.70.16)."}'
+      string: '{"Status": 0,"TC": false,"RD": true,"RA": true,"AD": true,"CD": false,"Question":[
+        {"name": "example.com.","type": 1}],"Answer":[ {"name": "example.com.","type":
+        1,"TTL": 5887,"data": "93.184.216.34"}]}'
     http_version: 
-  recorded_at: Fri, 24 Aug 2018 08:46:30 GMT
+  recorded_at: Sun, 26 Aug 2018 00:59:38 GMT
 recorded_with: VCR 4.0.0

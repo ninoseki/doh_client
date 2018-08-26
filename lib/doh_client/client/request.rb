@@ -9,6 +9,10 @@ module DoHClient
         raise ResponseError, res.body.to_s
       end
 
+      def self.get(url, query)
+        new.get(url, query);
+      end
+
       def headers
         {
           accept: "application/dns-json",
@@ -23,10 +27,6 @@ module DoHClient
         else
           HTTP
         end
-      end
-
-      def self.get(url, query)
-        new.get(url, query);
       end
     end
   end

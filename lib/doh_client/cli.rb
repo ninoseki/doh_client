@@ -1,18 +1,21 @@
 # frozen_string_literal: true
 
 require "thor"
+require "json"
 
 module DoHClient
   class CLI < Thor
-    class_option :resolver, type: :string
+    class_option :resolver, type: :string, desc: "a resolver to use ('google' or 'cloudflare', default: google)"
 
     desc "resolve [NAME]", "resolve a given name"
+    method_option :type, type: :string, default: "A"
     method_option :cd, type: :boolean
     method_option :do, type: :boolean
     method_option :edns_client_subnet, type: :string
     method_option :random_padding, type: :string
     def resolve(name)
-
+      hash = resolver.resolve(name, options)
+      puts hash.to_json
     end
 
     no_commands do

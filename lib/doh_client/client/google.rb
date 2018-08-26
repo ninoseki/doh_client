@@ -7,13 +7,13 @@ module DoHClient
         "https://dns.google.com/resolve"
       end
 
-      def build_query(params)
+      def build_query(name, options)
         {
-          name: params[:name],
-          type: params[:type],
-          cd: params[:cd],
-          edns_client_subnet: params[:edns_client_subnet],
-          random_padding: params[:random_padding]
+          name: name,
+          type: options[:type],
+          cd: options[:cd],
+          edns_client_subnet: options[:edns_client_subnet],
+          random_padding: options[:random_padding]
         }.compact
       end
     end

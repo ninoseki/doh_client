@@ -6,14 +6,14 @@ require "http"
 module DoHClient
   module Client
     class Base
-      def get(params)
-        query = build_query(params)
+      def resolve(name, options)
+        query = build_query(name, options)
         validate(query)
         Request.get(endpoint, query)
       end
 
-      def self.get(params)
-        new.get(params)
+      def self.resolve(name, options)
+        new.resolve(name, options)
       end
 
       def endpoint
