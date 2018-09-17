@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 require "bundler/setup"
-require "doh_client"
 
 require 'coveralls'
 Coveralls.wear!
+
+require "doh_client"
 
 require "vcr"
 
