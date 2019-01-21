@@ -34,11 +34,11 @@ Or install it yourself as:
 ```rb
 require 'doh_client'
 
-DoHClient::Google.resolve("example.com", { type: "A" })
-DoHClient::Google.resolve("example.com", { type: "A", edns_client_subnet: "0.0.0.0/0", random_padding: "XmkMw~o_mgP2pf.gpw-Oi5dK" })
+DoHClient::Client::Google.resolve("example.com", { type: "A" })
+DoHClient::Client::Google.resolve("example.com", { type: "A", edns_client_subnet: "0.0.0.0/0", random_padding: "XmkMw~o_mgP2pf.gpw-Oi5dK" })
 
-DoHClient::Cloudflare.resolve("example.com", { type: "A" })
-DoHClient::Cloudflare.resolve("example.com", { type: "A", do: true, cd: false })
+DoHClient::Client::Cloudflare.resolve("example.com", { type: "A" })
+DoHClient::Client::Cloudflare.resolve("example.com", { type: "A", do: true, cd: false })
 ```
 
 ### As a CLI
