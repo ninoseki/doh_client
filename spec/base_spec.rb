@@ -9,7 +9,7 @@ RSpec.describe DoHClient::Client::Base, :vcr do
       q = { name: "example.com" }
       expect { subject.validate q }.to raise_error(ArgumentError)
 
-      q = { name: "example.com", type: "A", cd: "invalid"}
+      q = { name: "example.com", type: "A", cd: "invalid" }
       expect { subject.validate q }.to raise_error(ArgumentError)
       q = { name: "example.com", type: "A", cd: false }
       subject.validate q
