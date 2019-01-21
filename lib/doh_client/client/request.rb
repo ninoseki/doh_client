@@ -6,6 +6,7 @@ module DoHClient
       def get(url, query)
         res = http.headers(headers).get(url, params: query);
         return JSON.parse(res.body.to_s) if res.code == 200
+
         raise ResponseError, res.body.to_s
       end
 

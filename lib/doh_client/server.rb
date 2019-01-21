@@ -25,6 +25,7 @@ module DoHClient
       transaction.append_question!
       answers.each do |answer|
         next unless klass = Resolv::DNS::Resource.get_class(answer["type"], resource_class::ClassValue)
+
         resource = klass < Resolv::DNS::Resource::DomainName ? klass.new(Resolv::DNS::Name.create(answer["data"])) : klass.new(answer["data"])
         transaction.response.add_answer(answer["name"], answer["TTL"], resource)
       end
